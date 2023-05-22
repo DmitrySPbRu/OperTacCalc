@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import OperTacCalc.*; //Radar.*;
+//import OperTacCalc.*; //Radar.*;
 //import OperTacCalc.Geometry.LenghtArc;
 public class MainWindow implements Runnable, ActionListener
 {
@@ -66,6 +66,12 @@ public class MainWindow implements Runnable, ActionListener
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        //create textField
+        smallField = new JTextField(15);
+        smallField.setToolTipText("Короткое поле");
+        bigField = new JTextField("Текст поля", 25);
+        bigField.setToolTipText("Длиное поле");
+
     }    //handles the click event on JMenutem
     public void actionPerformed(ActionEvent ev)
     {   String textOnMenu = ((JMenuItem) ev.getSource()).getText();
