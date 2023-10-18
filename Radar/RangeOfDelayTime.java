@@ -3,7 +3,6 @@ import java.util.Scanner;
 import static java.lang.Math.*;
 public class RangeOfDelayTime {
      public static void main(String[] args) {
-        
         double t, r;
         final double c=299792.458; //km/sec
         Scanner in = new Scanner(System.in);

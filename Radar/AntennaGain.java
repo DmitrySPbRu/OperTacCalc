@@ -7,7 +7,7 @@ public class AntennaGain {
         short typeAnt;
         final double c=299792458; //m/sec
         Scanner in = new Scanner(System.in);
-        System.out.println("Input type of antenna: 1 - sphere, 2 - cylinder, 3 -  ");
+        System.out.println("Input type of antenna: 1 - phased array antenna, 2 - mirror antenna, 3 -  ");
         typeAnt = in.nextShort();
         System.out.print("Input wavelength (m): ");
         lambda = in.nextDouble();
