@@ -8,29 +8,30 @@ public class ComboBox extends JPanel
 {    JLabel picture;
     public ComboBox()
     {   super(new BorderLayout());
-        ArrayList<String> listPet = new ArrayList<String>();
-        listPet.add("Bird");
-        listPet.add("Cat");
-        listPet.add("Dog");
-        listPet.add("Rabbit");
-        listPet.add("Pig");
+        ArrayList<String> listTask = new ArrayList<String>();
+        listTask.add("LenghtArc");
+        listTask.add("DirectPatterns");
+        listTask.add("AntennaGain");
+        listTask.add("EffScattArea");
+        listTask.add("FreqDopler");
+        listTask.add("RangeOfDelayTime");
         //Create the combo box, select the item at index 4.
-        //Indices start at 0, so 4 specifies the pig.
-        JComboBox petList = new JComboBox(listPet.toArray());
-        petList.setSelectedIndex(4);
-        petList.addActionListener(this);
+        //Indices start at 0, so 4 specifies the EPR.
+        JComboBox taskList = new JComboBox(listTask.toArray());
+        taskList.setSelectedIndex(4);
+        taskList.addActionListener(this);
         //Set up the picture.
         picture = new JLabel();
         picture.setFont(picture.getFont().deriveFont(Font.ITALIC));
         picture.setHorizontalAlignment(JLabel.CENTER);
-        updateLabel(listPet.get(petList.getSelectedIndex()));
+        updateLabel(listTask.get(taskList.getSelectedIndex()));
         picture.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
         //The preferred size is hard-coded to be the width of the
         //widest image and the height of the tallest image + the border.
         //A real program would compute this.
         picture.setPreferredSize(new Dimension(277, 122 + 10));
         //Lay out the demo.
-        add(petList, BorderLayout.PAGE_START);
+        add(taskList, BorderLayout.PAGE_START);
         add(picture, BorderLayout.PAGE_END);
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
     }
@@ -47,7 +48,7 @@ public class ComboBox extends JPanel
      * this method should be invoked from the event-dispatching thread.  */
     private static void createAndShowGUI()
     {   //Create and set up the window.
-        JFrame frame = new JFrame("ComboBoxDemo");
+        JFrame frame = new JFrame("OperTacCalc (ComBoxDemo)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Create and set up the content pane.
         JComponent newContentPane = new ComboBox();

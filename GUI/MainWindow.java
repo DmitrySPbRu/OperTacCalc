@@ -2,19 +2,19 @@ package OperTacCalc.GUI;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.awt.FlowLayout;
-import java.awt.Font;
-//import OperTacCalc.*; //Radar.*;
-//import OperTacCalc.Geometry.LenghtArc;
+//import OperTacCalc.Radar.*;
+import OperTacCalc.Geometry.*;
+
 public class MainWindow implements Runnable, ActionListener
 {
     private JLabel message;
     private JFrame frame;
     private JMenuBar menuBar;
-    private JMenu taskMenu, editMenu;
-    private JMenuItem lenArcMenuItem, dirPatMenuItem, antGainMenuItem, esaMenuItem, fDopMenuItem, rDtimeMenuItem;
-    private JMenuItem cutMenuItem, copyMenuItem, pasteMenuItem;
+    private JMenu taskRadarMenu, taskGeomMenu;
+    private JMenuItem dirPatMenuItem, antGainMenuItem, esaMenuItem, fDopMenuItem, rDtimeMenuItem, rangeResMenuItem;
+    private JMenuItem hAhMenuItem, lenArcMenuItem;
     JTextField smallField, bigField;
+    LenghtArc lenghtArc;
     public static void main(String[] args)
     { SwingUtilities.invokeLater(new MainWindow()); }
     public void run() {
@@ -22,42 +22,39 @@ public class MainWindow implements Runnable, ActionListener
         menuBar = new JMenuBar();
         message = new JLabel();
         message.setHorizontalAlignment(JLabel.CENTER);
-        // build the File menu
-        taskMenu = new JMenu("Tasks");
-        lenArcMenuItem = new JMenuItem("LenghtArc");
-        taskMenu.add(lenArcMenuItem);
+        // build the RadarTasks menu
+        taskRadarMenu = new JMenu("RadarTasks");
         dirPatMenuItem = new JMenuItem("DirectPatterns");
-        taskMenu.add(dirPatMenuItem);
+        taskRadarMenu.add(dirPatMenuItem);
         antGainMenuItem = new JMenuItem("AntennaGain");
-        taskMenu.add(antGainMenuItem);
+        taskRadarMenu.add(antGainMenuItem);
         esaMenuItem = new JMenuItem("EffScattArea");
-        taskMenu.add(esaMenuItem);
+        taskRadarMenu.add(esaMenuItem);
         fDopMenuItem = new JMenuItem("FreqDopler");
-        taskMenu.add(fDopMenuItem);
+        taskRadarMenu.add(fDopMenuItem);
         rDtimeMenuItem = new JMenuItem("RangeOfDelayTime");
-        taskMenu.add(rDtimeMenuItem);
-        lenArcMenuItem.addActionListener(this);
+        taskRadarMenu.add(rDtimeMenuItem);
+        rangeResMenuItem = new JMenuItem("RangeResolution");
+        taskRadarMenu.add(rangeResMenuItem);
         dirPatMenuItem.addActionListener(this);
         antGainMenuItem.addActionListener(this);
         esaMenuItem.addActionListener(this);
         fDopMenuItem.addActionListener(this);
         rDtimeMenuItem.addActionListener(this);
-        // build the Edit menu
-        editMenu = new JMenu("Edit");
-        cutMenuItem = new JMenuItem("Cut");
-        copyMenuItem = new JMenuItem("Copy");
-        pasteMenuItem = new JMenuItem("Paste");
-        editMenu.add(cutMenuItem);
-        editMenu.add(copyMenuItem);
-        editMenu.add(pasteMenuItem);
+        rangeResMenuItem.addActionListener(this);
+        // build the GeomTasks menu
+        taskGeomMenu = new JMenu("GeomTasks");
+        lenArcMenuItem = new JMenuItem("LenghtArc");
+        taskGeomMenu.add(lenArcMenuItem);
+        hAhMenuItem = new JMenuItem("HeightAboveHorizon");
+        taskGeomMenu.add(hAhMenuItem);
+        lenArcMenuItem.addActionListener(this);
+        hAhMenuItem.addActionListener(this);
         //set listener
         // taskMenuItem.addActionListener(this);
-        cutMenuItem.addActionListener(this);
-        copyMenuItem.addActionListener(this);
-        pasteMenuItem.addActionListener(this);
         // add menus to menubar
-        menuBar.add(taskMenu);
-        menuBar.add(editMenu);
+        menuBar.add(taskRadarMenu);
+        menuBar.add(taskGeomMenu);
         // put the menubar on the frame
         frame.setJMenuBar(menuBar);
         frame.add(message, BorderLayout.CENTER);
@@ -72,8 +69,11 @@ public class MainWindow implements Runnable, ActionListener
         bigField = new JTextField("Текст поля", 25);
         bigField.setToolTipText("Длиное поле");
 
-    }    //handles the click event on JMenutem
+    }    //handles the click event on JMenuItem
     public void actionPerformed(ActionEvent ev)
-    {   String textOnMenu = ((JMenuItem) ev.getSource()).getText();
-        message.setText(textOnMenu + " menu item clicked."); }
+    {   lenghtArc =  new LenghtArc( );
+        String textOnMenu = ((JMenuItem) ev.getSource()).getText();
+        message.setText(textOnMenu + " menu item clicked.");
+
+    }
 }
