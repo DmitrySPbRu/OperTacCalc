@@ -1,6 +1,7 @@
 package OperTacCalc.Geometry;
 import java.util.Scanner;
 import static java.lang.Math.*;
+// расчет длины дуги от угла
 public class LenghtArc {
     public static void main(String[] args) {
         double l, r, alfDeg;

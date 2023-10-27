@@ -1,5 +1,6 @@
 package OperTacCalc.Radar;
 import java.util.Scanner;
+// расчет разрешающей способности по дальности ЛЧМ сигнала
 public class RangeResolution {
     public static void main(String[] args) {
         double deltaR, deltaF;

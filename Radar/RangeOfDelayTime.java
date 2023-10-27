@@ -1,6 +1,7 @@
 package OperTacCalc.Radar;
 import java.util.Scanner;
 import static java.lang.Math.*;
+// расчет времени задержки сигнала от дальности
 public class RangeOfDelayTime {
      public static void main(String[] args) {
         double t, r;

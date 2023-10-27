@@ -1,6 +1,7 @@
 package OperTacCalc.Radar;
 import java.util.Scanner;
 import static java.lang.Math.*;
+// расчет ЭПР тел простой формы
 public class EffScattArea {
     public static void main(String[] args) {
         double sigma, dOb, lOb, wOb, teta, lambda, rOb, alfa, sigmaTet;
