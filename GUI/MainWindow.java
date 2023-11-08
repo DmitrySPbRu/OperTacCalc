@@ -4,15 +4,14 @@ import java.awt.event.*;
 import javax.swing.*;
 //import OperTacCalc.Radar.*;
 import OperTacCalc.Geometry.*;
-
 public class MainWindow implements Runnable, ActionListener
 {
     private JLabel message;
     private JFrame frame;
     private JMenuBar menuBar;
     private JMenu taskRadarMenu, taskGeomMenu;
-    private JMenuItem dirPatMenuItem, antGainMenuItem, esaMenuItem, fDopMenuItem, rDtimeMenuItem, rangeResMenuItem;
-    private JMenuItem hAhMenuItem, lenArcMenuItem;
+    private JMenuItem dirPatMenuItem, antGainMenuItem, esaMenuItem, fDopMenuItem, rDtimeMenuItem, rangeResMenuItem,
+            hAhMenuItem, lenArcMenuItem;;
     JTextField smallField, bigField;
     LenghtArc lenghtArc;
     public static void main(String[] args)
@@ -68,12 +67,10 @@ public class MainWindow implements Runnable, ActionListener
         smallField.setToolTipText("Короткое поле");
         bigField = new JTextField("Текст поля", 25);
         bigField.setToolTipText("Длиное поле");
-
     }    //handles the click event on JMenuItem
     public void actionPerformed(ActionEvent ev)
     {   lenghtArc =  new LenghtArc( );
         String textOnMenu = ((JMenuItem) ev.getSource()).getText();
         message.setText(textOnMenu + " menu item clicked.");
-
     }
 }

@@ -5,14 +5,14 @@ import static java.lang.Math.*;
 public class AntennaGain {
     public static void main(String[] args) {
         double lAnt, hAnt, kGain, lambda, dAnt, wAnt, etaAnt, sAnt, nuAnt,
-                tetObjGrad, tetObjRad, cosTetObj, kGainDB;
-        short typeAnt, typeHorn, typePhArrAnt;
+                tetObjGrad, tetObjRad, kGainDB;
+        short typeAnt, typeHorn;
         final double c=299792458; //m/sec
         Scanner in = new Scanner(System.in);
         System.out.println("Input type of antenna: 1 - phased array antenna, 2 - mirror antenna, 3 - horn ");
         typeAnt = in.nextShort();
         System.out.print("Input wavelength (m): ");
-        lambda = in.nextDouble(); tetObjRad = 1; cosTetObj = cos(tetObjRad);
+        lambda = in.nextDouble(); tetObjRad = 1;
         switch (typeAnt) {
             case 1: // ввод и расчет для ФАР
             {   System.out.print("Введите ширину антенны (m): ");
@@ -62,7 +62,7 @@ public class AntennaGain {
         }
         kGain = dAnt * etaAnt; kGainDB = 10 * log10(kGain);
         System.out.println("Antenna gain = " + kGain + " dAnt = " + dAnt +
-                " cosTetObj = " + cosTetObj + " kGainDB = " + kGainDB);
+                " cosTetObj = " + cos(tetObjRad) + " kGainDB = " + kGainDB);
         in.close();
     }
 }

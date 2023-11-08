@@ -1,6 +1,5 @@
 package OperTacCalc.Radar;
 import java.util.Scanner;
-import static java.lang.Math.*;
 // расчет ширины диаграммы направленности антенны
 public class DirectPatterns {
     public static void main(String[] args) {
