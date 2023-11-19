@@ -1,4 +1,4 @@
-package OperTacCalc.Geometry;
+package OperTacCalc.LernJava;
 import java.util.Scanner;
 public class FlipBit {
     public static void main(String[] args) {

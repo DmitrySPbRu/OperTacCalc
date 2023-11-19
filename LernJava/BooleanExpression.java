@@ -1,9 +1,5 @@
-package OperTacCalc.Geometry;
-
+package OperTacCalc.LernJava;
 import java.util.Scanner;
-
-import static java.lang.Math.PI;
-import static java.lang.Math.sin;
 public class BooleanExpression {public static void main(String[] args) {
     boolean a, b, c, d, e;
     double x;

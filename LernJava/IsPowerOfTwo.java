@@ -1,4 +1,4 @@
-package OperTacCalc.Geometry;
+package OperTacCalc.LernJava;
 import java.util.Scanner;
 import java.lang.Integer;
 public class IsPowerOfTwo {
