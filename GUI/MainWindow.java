@@ -2,7 +2,7 @@ package OperTacCalc.GUI;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-//import OperTacCalc.Radar.*;
+import OperTacCalc.Radar.*;
 import OperTacCalc.Geometry.*;
 public class MainWindow implements Runnable, ActionListener
 {

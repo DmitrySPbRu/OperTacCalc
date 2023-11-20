@@ -4,6 +4,7 @@ import static java.lang.Math.*;
 // расчет длины дуги от угла
 public class LenghtArc {
     public static void main(String[] args) {
+        //lenghtArc new LenghtArc();
         double l, r, alfDeg;
         short unitsOf;
         Scanner in = new Scanner(System.in);
